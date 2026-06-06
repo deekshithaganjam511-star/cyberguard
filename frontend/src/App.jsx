@@ -55,11 +55,14 @@ function App() {
     setResult(null);
     setVerdict(null);
     try {
-      const res = await fetch("http://localhost:8000/analyze-job", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text: jobText }),
-      });
+      const res = await fetch(
+        "https://cyberguard-backend-3mo8.onrender.com/analyze-job",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text: jobText }),
+        },
+      );
       const data = await res.json();
       setResult(data.result);
       setVerdict(getVerdict(data.result));
@@ -76,11 +79,14 @@ function App() {
     setSmsResult(null);
     setSmsVerdict(null);
     try {
-      const res = await fetch("http://localhost:8000/analyze-sms", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text: smsText }),
-      });
+      const res = await fetch(
+        "https://cyberguard-backend-3mo8.onrender.com/analyze-sms",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text: smsText }),
+        },
+      );
       const data = await res.json();
       setSmsResult(data.result);
       setSmsVerdict(getVerdict(data.result));
@@ -97,11 +103,14 @@ function App() {
     setUrlResult(null);
     setUrlVerdict(null);
     try {
-      const res = await fetch("http://localhost:8000/analyze-url", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text: urlText }),
-      });
+      const res = await fetch(
+        "https://cyberguard-backend-3mo8.onrender.com/analyze-url",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text: urlText }),
+        },
+      );
       const data = await res.json();
       setUrlResult(data.result);
       setUrlVerdict(getVerdict(data.result));
@@ -117,11 +126,14 @@ function App() {
     setTipLoading(true);
     setTipResult(null);
     try {
-      const res = await fetch("http://localhost:8000/get-tip", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ topic }),
-      });
+      const res = await fetch(
+        "https://cyberguard-backend-3mo8.onrender.com/get-tip",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ topic }),
+        },
+      );
       const data = await res.json();
       setTipResult(data.result);
     } catch {
